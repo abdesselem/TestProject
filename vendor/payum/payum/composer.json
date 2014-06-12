@@ -1,0 +1,91 @@
+{
+    "name": "payum/payum",
+    "type": "library",
+    "description": "Domain friendly payment framework. Paypal, payex, authorize.net, be2bill, omnipay, recurring paymens, instant notifications and many more",
+    "keywords": [
+        "payment",
+        "recurring payment",
+        "instant payment notification",
+        "ipn",
+        "paypal",
+        "paypal express",
+        "paypal pro",
+        "paypal rest",
+        "paypal digital goods",
+        "authorize.net",
+        "be2bill",
+        "payex",
+        "omnipay",
+        "jms payment"
+    ],
+    "homepage": "http://payum.forma-dev.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kotlyar Maksim",
+            "email": "kotlyar.maksim@gmail.com"
+        },
+        {
+            "name":     "Payum project",
+            "homepage": "http://payum.forma-dev.com/"
+        },
+        {
+            "name":     "Community contributions",
+            "homepage": "https://github.com/Payum/Payum/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "kriswallsmith/buzz": "*",
+        "ajbdev/authorizenet-php-api": "1.1.*",
+        "paypal/rest-api-sdk-php" : "0.5.*",
+        "omnipay/omnipay": "~1.0",
+        "klarna/checkout": "~1",
+        "ext-soap": "*"
+    },
+    "require-dev": {
+        "ext-curl": "*",
+        "ext-pdo_sqlite": "*",
+        "doctrine/orm": "2.3.*",
+        "doctrine/mongodb": "1.0.*@dev",
+        "doctrine/mongodb-odm": "1.0.*@dev",
+        "phpunit/phpunit": "3.7.*",
+        "psr/log": "~1.0",
+        "zendframework/zend-db": "~2",
+        "symfony/routing": "~2",
+        "symfony/http-kernel": "~2",
+        "symfony/http-foundation": "~2"
+    },
+    "replace": {
+        "payum/core": "self.version",
+        "payum/paypal-express-checkout-nvp": "self.version",
+        "payum/paypal-pro-checkout-nvp": "self.version",
+        "payum/paypal-rest": "self.version",
+        "payum/paypal-ipn": "self.version",
+        "payum/authorize-net-aim": "self.version",
+        "payum/be2bill": "self.version",
+        "payum/payex": "self.version",
+        "payum/omnipay-bridge": "self.version",
+        "payum/offline": "self.version"
+    },
+    "suggest": {
+        "doctrine/orm": "If you want to store models to database using doctrin2 ORM",
+        "doctrine/mongodb-odm": "If you want to store models to mongo doctrin2 ODM",
+        "zendframework/zend-db": "If you want to store models to Zend Db ORM",
+        "symfony/routing": "If you want to use TokenFactory from symfony's bridge",
+        "symfony/http-kernel": "If you want to use HttpRequestVerifier from symfony's bridge",
+        "symfony/http-foundation": "If you want to use HttpRequestVerifier or ResponseInteractiveRequest from symfony's bridge",
+        "monolog/monolog": "In case you want to use PSR-3 logger"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": { "Payum": "src/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.8-dev"
+        }
+    }
+}

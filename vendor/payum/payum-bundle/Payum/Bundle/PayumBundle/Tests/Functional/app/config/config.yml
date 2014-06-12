@@ -1,0 +1,31 @@
+parameters:
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
+        
+framework:
+    #esi:             ~
+    #translator:      { fallback: %locale% }
+    test: ~
+    session:
+        storage_id: session.storage.mock_file
+    secret:          %secret%
+    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
+    default_locale:  %locale%
+
+payum:
+    security:
+        token_storage:
+            Payum\Core\Model\Token:
+                filesystem:
+                    id_property: hash
+                    storage_dir: %kernel.cache_dir%
+
+    contexts:
+        offline:
+            offline: ~
+
+            storages:
+                Payum\Core\Model\ArrayObject:
+                    filesystem:
+                        storage_dir: %kernel.cache_dir%
+                        id_property: id
